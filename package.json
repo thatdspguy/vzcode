@@ -23,10 +23,24 @@
     "plots",
     "real-time"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onCommand:vzcode.helloWorld",
+    "onCommand:vzcode.showVersion"
+  ],
   "main": "./out/extension.js",
   "contributes": {
-    "commands": []
+    "commands": [
+      {
+        "command": "vzcode.helloWorld",
+        "title": "VZCode: Hello World",
+        "category": "VZCode"
+      },
+      {
+        "command": "vzcode.showVersion",
+        "title": "VZCode: Show Version",
+        "category": "VZCode"
+      }
+    ]
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
