@@ -29,6 +29,15 @@
   ],
   "main": "./out/extension.js",
   "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "vzcode",
+          "title": "VZCode",
+          "icon": "resources/vzcode-icon.svg"
+        }
+      ]
+    },
     "commands": [
       {
         "command": "vzcode.helloWorld",
