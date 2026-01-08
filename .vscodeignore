@@ -1,0 +1,35 @@
+# Source files (compiled to out/)
+src/**
+
+# Development configuration
+.eslintrc.json
+.prettierrc
+tsconfig.json
+.gitignore
+
+# Development dependencies and cache
+node_modules/**
+.vscode/**
+.github/**
+
+# Documentation and planning (not needed in extension)
+docs/**
+*.md
+!README.md
+!CHANGELOG.md
+
+# Build artifacts
+*.vsix
+coverage/**
+.nyc_output/**
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Git
+.git/**
+.gitmodules
