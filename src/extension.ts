@@ -29,7 +29,8 @@ function registerCommands(context: vscode.ExtensionContext): void {
   // vzcode.showVersion - Display extension version
   const showVersionCommand = vscode.commands.registerCommand('vzcode.showVersion', () => {
     const extension = vscode.extensions.getExtension('thatdspguy.vzcode');
-    const version: string = (extension?.packageJSON as { version?: string } | undefined)?.version ?? 'unknown';
+    const version: string =
+      (extension?.packageJSON as { version?: string } | undefined)?.version ?? 'unknown';
     logger.info('Show Version command executed, version:', version);
     void vscode.window.showInformationMessage(`VZCode version ${version}`);
   });
