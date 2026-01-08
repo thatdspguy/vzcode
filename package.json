@@ -38,6 +38,14 @@
         }
       ]
     },
+    "views": {
+      "vzcode": [
+        {
+          "id": "vzcode.dashboardsView",
+          "name": "Dashboards"
+        }
+      ]
+    },
     "commands": [
       {
         "command": "vzcode.helloWorld",

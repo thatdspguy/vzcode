@@ -1,5 +1,6 @@
 import * as vscode from 'vscode';
 import { logger } from './utils/logger';
+import { DashboardsViewProvider } from './views/dashboardsView';
 
 /**
  * Called when the extension is activated.
@@ -9,10 +10,28 @@ export function activate(context: vscode.ExtensionContext): void {
   logger.info('Extension is now active');
   logger.debug('Extension context:', { extensionPath: context.extensionPath });
 
+  // Register view providers
+  registerViews(context);
+
   // Register commands in the vzcode namespace
   registerCommands(context);
 
   logger.info('All commands registered successfully');
+}
+
+/**
+ * Register all VZCode view providers.
+ */
+function registerViews(context: vscode.ExtensionContext): void {
+  // Register Dashboards view
+  const dashboardsViewProvider = new DashboardsViewProvider();
+  const dashboardsView = vscode.window.registerTreeDataProvider(
+    'vzcode.dashboardsView',
+    dashboardsViewProvider
+  );
+  context.subscriptions.push(dashboardsView);
+
+  logger.debug('Registered view: vzcode.dashboardsView');
 }
 
 /**
